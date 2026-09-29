@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agentic AI RAG Assistant</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✦</div>
+                <div>
+                    <h1>Agentic AI</h1>
+                    <span>RAG Assistant</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <p class="section-label">KNOWLEDGE SOURCE</p>
+
+                <div class="source-card">
+                    <div class="source-icon">📖</div>
+                    <div>
+                        <strong>Agentic AI for Executives</strong>
+                        <small>Grounded knowledge base</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <p class="section-label">TRY ASKING</p>
+
+                <button class="example-question"
+                        data-question="What is Agentic AI?">
+                    What is Agentic AI?
+                </button>
+
+                <button class="example-question"
+                        data-question="How are AI agents different from automation?">
+                    AI agents vs automation
+                </button>
+
+                <button class="example-question"
+                        data-question="What is the core Agentic Architecture?">
+                    Core Agentic Architecture
+                </button>
+
+                <button class="example-question"
+                        data-question="What role does memory play in Agentic AI?">
+                    Role of memory
+                </button>
+            </div>
+
+            <div class="sidebar-bottom">
+                <button id="clearChat" class="clear-button">
+                    🗑 Clear conversation
+                </button>
+
+                <a href="/docs" target="_blank" class="api-link">
+                    API Documentation ↗
+                </a>
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main">
+
+            <header class="topbar">
+
+                <div class="mobile-brand">
+                    <div class="brand-icon">✦</div>
+                    <div>
+                        <strong>Agentic AI</strong>
+                        <span>RAG Assistant</span>
+                    </div>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Knowledge grounded
+                </div>
+
+            </header>
+
+
+            <!-- Chat -->
+            <section id="chatContainer" class="chat-container">
+
+                <div class="welcome">
+
+                    <div class="welcome-icon">🤖</div>
+
+                    <h2>Ask about Agentic AI</h2>
+
+                    <p>
+                        Ask questions about the Agentic AI knowledge source.
+                        Answers are generated using retrieved document context.
+                    </p>
+
+                    <div class="welcome-chips">
+                        <button class="chip"
+                                data-question="What is Agentic AI?">
+                            What is Agentic AI?
+                        </button>
+
+                        <button class="chip"
+                                data-question="What is the role of memory?">
+                            What is the role of memory?
+                        </button>
+
+                        <button class="chip"
+                                data-question="What is multi-agent orchestration?">
+                            Multi-agent orchestration
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Input -->
+            <div class="input-area">
+
+                <form id="chatForm" class="input-box">
+
+                    <textarea
+                        id="questionInput"
+                        rows="1"
+                        placeholder="Ask something about Agentic AI..."
+                        autocomplete="off"></textarea>
+
+                    <button id="sendButton"
+                            type="submit"
+                            aria-label="Send message">
+                        ➤
+                    </button>
+
+                </form>
+
+                <p class="input-note">
+                    Answers are grounded in the indexed Agentic AI document.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="/script.js"></script>
+
+</body>
+</html>

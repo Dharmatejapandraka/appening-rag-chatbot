@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: appening-rag-chatbot
+    runtime: python
+    plan: free
+
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+
+      - key: GROQ_API_KEY
+        sync: false
+
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+
+      - key: PINECONE_API_KEY
+        sync: false
+
+      - key: PINECONE_INDEX_NAME
+        value: appening-rag-index
+
+      - key: PINECONE_CLOUD
+        value: aws
+
+      - key: PINECONE_REGION
+        value: us-east-1
+
+      - key: EMBEDDING_MODEL
+        value: BAAI/bge-small-en-v1.5
+
+      - key: CHUNK_SIZE
+        value: "1000"
+
+      - key: CHUNK_OVERLAP
+        value: "200"
+
+      - key: TOP_K
+        value: "5"
+
+      - key: MIN_RELEVANCE_SCORE
+        value: "0.35"
